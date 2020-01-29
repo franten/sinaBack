@@ -35,8 +35,14 @@ public class InfrastructureConfig {
 		
 		return builder
         	.setType(EmbeddedDatabaseType.H2)
+<<<<<<<<< Temporary merge branch 1:src/com/alfatecsistemas/sina/config/InfrastructureConfig.java
+        	// .addScript("sql/create-db.sql")
+        	// .addScript("sql/insert-data.sql")
+=========
+			.setName("db")
         	.addScript("sql/create-db.sql")
         	.addScript("sql/insert-data.sql")
+>>>>>>>>> Temporary merge branch 2:src/main/java/com/alfatecsistemas/sina/config/InfrastructureConfig.java
         	.build();
 	}
 

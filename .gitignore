@@ -1,9 +1,9 @@
 # Default ignored files
-<<<<<<< HEAD
+<<<<<<<<< Temporary merge branch 1
 /workspace.xml
 
-=======
->>>>>>> masterlalego
+=========
+>>>>>>>>> Temporary merge branch 2
 # Intellij
 .idea/
 *.iml
