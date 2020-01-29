@@ -1,6 +1,9 @@
 # Default ignored files
+<<<<<<< HEAD
 /workspace.xml
 
+=======
+>>>>>>> masterlalego
 # Intellij
 .idea/
 *.iml
