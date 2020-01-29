@@ -1,4 +1,9 @@
 # Default ignored files
+<<<<<<< HEAD
+=======
+/workspace.xml
+
+>>>>>>> origin/master
 # Intellij
 .idea/
 *.iml
