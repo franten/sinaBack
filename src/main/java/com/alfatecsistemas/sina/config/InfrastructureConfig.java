@@ -38,6 +38,7 @@ public class InfrastructureConfig {
 			.setName("db")
         	.addScript("sql/create-db.sql")
         	.addScript("sql/insert-orma.sql")
+			.addScript("sql/insert-conf.sql")
 			.addScript("sql/insert-secu.sql")
         	.build();
 	}
