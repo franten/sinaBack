@@ -17,4 +17,6 @@ public class UsersServiceImpl implements UsersService {
     public List<SecuUsers> getUsers() {
         return usersRepository.findAll();
     }
+
+    public SecuUsers getUsers(Integer)
 }
