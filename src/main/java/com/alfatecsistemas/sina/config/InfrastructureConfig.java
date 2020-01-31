@@ -25,7 +25,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  *
  */
 @Configuration
-@ComponentScan("com.alfatecsistemas.sina.service")
+@ComponentScan("com.alfatecsistemas.sina")
 @EnableJpaRepositories("com.alfatecsistemas.sina.repository")
 public class InfrastructureConfig {
 	
@@ -57,7 +57,7 @@ public class InfrastructureConfig {
 		LocalContainerEntityManagerFactoryBean bean = new LocalContainerEntityManagerFactoryBean();
 		bean.setDataSource(dataSource);
 		bean.setJpaVendorAdapter(jpaVendorAdapter);
-		bean.setPackagesToScan("com.alfatecsistemas.sina.bean");
+		bean.setPackagesToScan("com.alfatecsistemas.sina.domain");
 		return bean;
 	}
 

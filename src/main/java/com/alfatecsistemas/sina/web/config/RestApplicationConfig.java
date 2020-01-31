@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.alfatecsistemas.sina.web.controller")
+@ComponentScan("com.alfatecsistemas.sina.controller")
 public class RestApplicationConfig{
 	
 }
