@@ -30,17 +30,6 @@ public class OrmaProfessionals {
     @Column(name="PROF_DELETED_DATE")
     private LocalDateTime profDeletedDate;
 
-    public OrmaProfessionals(Integer profId, String profName, String profSurname1, String profSurname2,
-                             String profIdValue, Boolean profDeleted, LocalDateTime profDeletedDate) {
-        this.profId = profId;
-        this.profName = profName;
-        this.profSurname1 = profSurname1;
-        this.profSurname2 = profSurname2;
-        this.profIdValue = profIdValue;
-        this.profDeleted = profDeleted;
-        this.profDeletedDate = profDeletedDate;
-    }
-
     public Integer getProfId() {
         return profId;
     }
