@@ -5,7 +5,7 @@
 =========
 >>>>>>>>> Temporary merge branch 2
 # Intellij
-.idea/
+.idea/*
 *.iml
 *.iws
 
