@@ -1,5 +1,5 @@
 /**
- *
+ * 
  */
 package com.alfatecsistemas.sina.config;
 
@@ -28,19 +28,17 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan("com.alfatecsistemas.sina")
 @EnableJpaRepositories("com.alfatecsistemas.sina.repository")
 public class InfrastructureConfig {
-
+	
 	@Bean
 	public DataSource dataSource() {
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-
+		
 		return builder
-				.setType(EmbeddedDatabaseType.H2)
-				.setName("db")
-				.addScript("sql/create-db.sql")
-				.addScript("sql/insert-orma.sql")
-				.addScript("sql/insert-conf.sql")
-				.addScript("sql/insert-secu.sql")
-				.build();
+        	.setType(EmbeddedDatabaseType.H2)
+			.setName("db")
+        	.addScript("sql/create-db.sql")
+        	.addScript("sql/insert-data.sql")
+        	.build();
 	}
 
 	@Bean
@@ -65,12 +63,12 @@ public class InfrastructureConfig {
 	public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
 		return new JpaTransactionManager(emf);
 	}
-
+	
 	@Bean
-	public ViewResolver internalResourceViewResolver() {
-		InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
-		internalResourceViewResolver.setPrefix("/WEB-INF/");
-		internalResourceViewResolver.setSuffix(".jsp");
-		return internalResourceViewResolver;
-	}
+    public ViewResolver internalResourceViewResolver() {
+        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
+        internalResourceViewResolver.setPrefix("/WEB-INF/");
+        internalResourceViewResolver.setSuffix(".jsp");
+        return internalResourceViewResolver;
+    }
 }
