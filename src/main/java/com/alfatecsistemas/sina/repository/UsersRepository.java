@@ -11,6 +11,12 @@ public interface UsersRepository extends JpaRepository<SecuUsers, Integer> {
 
     SecuUsers getSecuUsersByUserLogin(String userLogin);
 
+    SecuUsers getSecuUsersByProfId(Integer userLogin);
+
+    @Query("select su from SecuUsers su " +
+            "where su.profId = :profId")
+    SecuUsers getUserByProfId(@Param("profId") Integer profId);
+
     @Query("select su from SecuUsers su " +
             "where su.userLogin = :userLogin and su.userPassword = :userPassword")
     SecuUsers getLogin(@Param("userLogin") String userLogin, @Param("userPassword") String userPassword);

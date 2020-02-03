@@ -9,15 +9,13 @@ public interface UsersService {
 
     List<SecuUsers> getUsers();
 
-    SecuUsers getUser(Integer profId);
-
-    SecuUsers getUserByName(String name);
+    SecuUsers getUser(Integer userId);
 
     SecuUsers getLogin(String name, String password);
 
-    SecuUsers updateUser(Integer profId, String name, String password) throws NotFoundException;
+    SecuUsers updateUser(Integer userId, String name, String password) throws NotFoundException;
 
-    SecuUsers insertUser(Integer profId, String name, String password) throws Exception;
+    SecuUsers insertUser(Integer userId, String name, String password) throws Exception;
 
-    SecuUsers deleteUser(Integer profId) throws NotFoundException;
+    SecuUsers deleteUser(Integer userId) throws NotFoundException;
 }
