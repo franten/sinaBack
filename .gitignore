@@ -5,7 +5,7 @@
 
 >>>>>>> origin/master
 # Intellij
-.idea/
+.idea/*
 *.iml
 *.iws
 

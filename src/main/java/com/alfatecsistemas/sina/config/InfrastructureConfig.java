@@ -26,7 +26,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  */
 @Configuration
 @ComponentScan("com.alfatecsistemas.sina")
-@EnableJpaRepositories("com.alfatecsistemas.sina.repository")
+@EnableJpaRepositories({"com.alfatecsistemas.sina.repository", "com.alfatecsistemas.sina.dao"})
 public class InfrastructureConfig {
 	
 	@Bean
