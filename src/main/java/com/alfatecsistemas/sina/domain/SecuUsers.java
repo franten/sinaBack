@@ -21,7 +21,8 @@ public class SecuUsers implements Serializable {
     @Column(name="USER_PASSWORD")
     private String userPassword;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "PROF_ID", referencedColumnName="PROF_ID", insertable = false, updatable = false)
     private OrmaProfessionals ormaProfessionals;
 
     public Integer getUserId() {

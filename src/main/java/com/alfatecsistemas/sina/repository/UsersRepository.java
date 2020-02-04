@@ -21,4 +21,8 @@ public interface UsersRepository extends JpaRepository<SecuUsers, Integer> {
             "where su.userLogin = :userLogin and su.userPassword = :userPassword")
     SecuUsers getLogin(@Param("userLogin") String userLogin, @Param("userPassword") String userPassword);
 
+    @Query("select su from SecuUsers su JOIN FETCH su.ormaProfessionals op " +
+            "where su.userId = :userId and op.profId = :profId")
+    SecuUsers getUserAndProfessional(@Param("userId") Integer userId, @Param("profId") Integer profId);
+
 }
