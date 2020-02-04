@@ -20,12 +20,12 @@ public class UsersServiceImpl implements UsersService {
         return usersRepository.findAll();
     }
 
-    public SecuUsers getUser(Integer profId) {
-        return usersRepository.findOne(profId);
+    public SecuUsers getUser(Integer userId) {
+        return usersRepository.findOne(userId);
     }
 
-    public SecuUsers getUserByName(String name) {
-        return usersRepository.getSecuUsersByUserLogin(name);
+    public SecuUsers getUserByProfId(Integer profId) {
+        return usersRepository.getUserByProfId(profId);
     }
 
     public SecuUsers getLogin(String name, String password) {
@@ -34,8 +34,8 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public SecuUsers updateUser(Integer profId, String name, String password) throws NotFoundException {
-        SecuUsers user = getUser(profId);
+    public SecuUsers updateUser(Integer userId, String name, String password) throws NotFoundException {
+        SecuUsers user = getUser(userId);
 
         if (user != null) {
             String passwordSha1 = EncryptUtils.sha1(password);
@@ -51,18 +51,6 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public SecuUsers insertUser(Integer profId, String name, String password) throws Exception {
-        SecuUsers user = getUser(profId);
-
-        if (user == null) {
-            String passwordSha1 = EncryptUtils.sha1(password);
-
-            user = new SecuUsers();
-            user.setProfId(profId);
-            user.setUserLogin(name);
-            user.setUserPassword(passwordSha1);
-        } else {
-            throw new Exception(String.format("The user with name %s already exists", profId));
-        }
         return null;
     }
 
