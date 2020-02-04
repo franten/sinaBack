@@ -37,6 +37,12 @@ public class UsersController {
         return usersService.getLogin(user.getName(), user.getPassword());
     }
 
+    @RequestMapping(path = "/{userId}/professionals/{profId}", method = RequestMethod.GET)
+    public SecuUsers getUserAndProfessional(@PathVariable Integer userId, @PathVariable Integer profId) {
+        SecuUsers users = usersService.getUserAndProfessional(userId, profId);
+        return users;
+    }
+
     @RequestMapping(path = "/{userId}", method = RequestMethod.PUT)
     public ResponseEntity<SecuUsers> updateUser(@PathVariable Integer userId, @RequestBody UserDto dto) {
 
